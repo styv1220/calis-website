@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calis Adventures — Where Luxury Meets Adventure</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav id="navbar">
+    <a class="nav-logo" href="#home">
+<img src="images/logo.png" alt="Calis Elite Logo" class="nav-logo-icon" style="width:48px;height:48px;object-fit:contain;" />
+      <div class="nav-logo-text">
+        Calis Elite
+        <span>by Calis Adventures</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#bookings" class="btn-nav">Book Now</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Open Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about"        class="mob-link">About</a>
+    <a href="#services"     class="mob-link">Services</a>
+    <a href="#why"          class="mob-link">Why Us</a>
+    <a href="#testimonials" class="mob-link">Testimonials</a>
+    <a href="#gallery"     class="mob-link">Gallery</a>
+    <a href="#contact"      class="mob-link">Contact</a>
+    <a href="#bookings"     class="btn-mobile mob-link">Book Now</a>
+  </div>
+
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="home">
+    <div class="hero-bg">
+      <!-- Hero Slideshow — 8 curated images -->
+      <div class="hero-slideshow" id="heroSlideshow">
+        <div class="hero-slide active" style="background-image:url('images/gallery-1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/gallery-15.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/gallery-3.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/gallery-17.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/service-diving.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/gallery-4.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/why-us.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('images/gallery-14.jpg')"></div>
+      </div>
+      <!-- Slideshow dots -->
+      <div class="hero-dots" id="heroDots"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Est. Kenya · East Africa</p>
+      <h1 class="hero-title">Where <em>Luxury</em><br>Meets<br>Adventure</h1>
+      <p class="hero-tagline">Curated safaris · Guided hikes · Bespoke tours across East Africa</p>
+      <div class="hero-btns">
+        <a href="#bookings" class="btn-primary">Book Now</a>
+        <a href="#services" class="btn-outline">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about">
+    <div class="about-grid">
+
+      <div class="about-img-wrap reveal">
+        <img src="images/about.jpg" alt="Safari landscape" class="about-img"/>
+        <div class="about-img-badge">
+          <strong>2</strong>
+          <span>Years of<br>Excellence</span>
+        </div>
+      </div>
+
+      <div class="reveal" style="transition-delay: 0.2s;">
+        <p class="section-label">Our Story</p>
+        <h2 class="section-title">Born from <em>Passion</em>,<br>Built on Trust</h2>
+        <div class="divider"></div>
+        <p class="section-sub">Calis Adventures was founded with a single vision: to show the world the breathtaking beauty of East Africa in a way that feels personal, authentic, and unforgettable. From the sweeping savannas of the Masai Mara to the snow-capped peaks of Mount Kenya — every journey we craft is tailored to you.</p>
+        <p class="section-sub" style="margin-top: 1rem;">In just two years of operation, our expert guides, deep local knowledge, and nationwide reach across Kenya have made us a trusted adventure partner — with an estimated impact touching over 2,000 lives.</p>
+        <div class="about-stats">
+          <div class="stat-box"><strong>2</strong><span>Safaris Completed</span></div>
+          <div class="stat-box"><strong>4</strong><span>Clients Served</span></div>
+          <div class="stat-box"><strong>7</strong><span>Destinations Visited</span></div>
+          <div class="stat-box"><strong>2,000+</strong><span>Lives Impacted</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+  <section id="services">
+    <div class="services-header reveal">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Our <em>Services</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub">From heart-pumping hikes to seamless airport transfers — we handle every detail so you can focus on the experience.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <img src="images/service-bus.jpg" alt="Bus Tours" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">🚌</span>
+          <h3 class="service-name">Bus Tours</h3>
+          <p class="service-desc">Explore East Africa's most iconic destinations in comfort aboard our modern, air-conditioned coaches — perfect for groups of all sizes.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <img src="images/service-diving.jpg" alt="Diving Services" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">🤿</span>
+          <h3 class="service-name">Diving Services</h3>
+          <p class="service-desc">Discover the vibrant coral reefs and marine life of the Kenyan coast with our certified dive instructors and fully equipped dive centre.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.2s;">
+        <img src="images/service-car.jpg" alt="Car Reservations" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">🚙</span>
+          <h3 class="service-name">Car Reservations</h3>
+          <p class="service-desc">Reliable 4×4 safari vehicles, minibuses, and saloons — all maintained to the highest standard for your comfort and safety.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <img src="images/service-airport.jpg" alt="Airport Transfer" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">✈️</span>
+          <h3 class="service-name">Airport Transfer</h3>
+          <p class="service-desc">Seamless pickups and drop-offs at JKIA, Wilson, and regional airstrips — meet your driver, relax, and let us handle the rest.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <img src="images/service-hotel.jpg" alt="Hotel Reservations" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">🏨</span>
+          <h3 class="service-name">Hotel Reservations</h3>
+          <p class="service-desc">We curate and book the finest lodges, tented camps, and boutique hotels across Kenya to complete your journey in style.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.2s;">
+        <img src="images/service-guide.jpg" alt="Tourist Guide" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">🧭</span>
+          <h3 class="service-name">Tourist Guide Services</h3>
+          <p class="service-desc">Expert, bilingual guides who bring destinations to life with stories, knowledge, and an infectious passion for East Africa.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <img src="images/service-events.jpg" alt="Event Hosting" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">🎪</span>
+          <h3 class="service-name">Event Hosting</h3>
+          <p class="service-desc">From corporate galas to outdoor festivals and private celebrations — we plan, organise and execute unforgettable events with precision and flair.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+      <div class="service-card reveal" style="transition-delay: 0.1s;">
+        <img src="images/service-teambuilding.jpg" alt="Team Building" class="service-img"/>
+        <div class="service-body">
+          <span class="service-icon">🤝</span>
+          <h3 class="service-name">Team Building</h3>
+          <p class="service-desc">Strengthen your team with adventure-based retreats, collaborative challenges, and immersive outdoor experiences designed to bond and energise.</p>
+          <a href="#bookings" class="btn-service">Book This →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WHY CHOOSE US
+       ============================================================ -->
+  <section id="why">
+    <div class="why-bg-text">CALIS</div>
+    <div class="why-grid">
+
+      <div>
+        <p class="section-label reveal">Why Choose Us</p>
+        <h2 class="section-title reveal">The <em>Calis</em><br>Difference</h2>
+        <div class="divider reveal"></div>
+        <div class="why-reasons">
+          <div class="why-reason reveal">
+            <span class="why-num">01</span>
+            <div class="why-reason-text">
+              <h3>Deep Local Expertise</h3>
+              <p>Our guides are born and raised in East Africa. They don't just know the routes — they know the stories, the seasons, and the secrets that make each place extraordinary.</p>
+            </div>
+          </div>
+          <div class="why-reason reveal" style="transition-delay: 0.1s;">
+            <span class="why-num">02</span>
+            <div class="why-reason-text">
+              <h3>Fully Tailored Experiences</h3>
+              <p>No cookie-cutter packages. Every itinerary is designed around your group, your pace, and your vision of the perfect adventure.</p>
+            </div>
+          </div>
+          <div class="why-reason reveal" style="transition-delay: 0.2s;">
+            <span class="why-num">03</span>
+            <div class="why-reason-text">
+              <h3>Luxury Without Compromise</h3>
+              <p>From premium vehicles to hand-picked lodges, we ensure every touchpoint of your journey reflects quality, comfort, and care.</p>
+            </div>
+          </div>
+          <div class="why-reason reveal" style="transition-delay: 0.3s;">
+            <span class="why-num">04</span>
+            <div class="why-reason-text">
+              <h3>Safety First, Always</h3>
+              <p>Your wellbeing is our top priority. All guides are trained in first aid, and every trip is planned with meticulous attention to safety protocols.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-img reveal" style="transition-delay: 0.2s;">
+        <img src="images/why-us.jpg" alt="Safari adventure"/>
+        <div class="why-img-label">
+          <strong>4.9 ★</strong>
+          <span>Avg. Client Rating</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIALS
+       ============================================================ -->
+  <section id="testimonials">
+    <div class="testimonials-header reveal">
+      <p class="section-label">Client Stories</p>
+      <h2 class="section-title">What Our <em>Adventurers</em> Say</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">I booked the Masai Mara safari for my wife's birthday and Calis Adventures pulled off something truly spectacular. From the luxury camp to the private game drive at sunrise — every moment felt curated just for us. This is not just a tour company, it is an experience company.</p>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-author"><strong>Collins Ochieng</strong><span>Kisumu, Kenya</span></div>
+      </div>
+
+      <div class="testi-card reveal" style="transition-delay: 0.1s;">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Our church group of 40 people did a bus tour to Amboseli and I was honestly nervous about the logistics. Calis handled everything — the coach was spotless, the guides were funny and knowledgeable, and we arrived everywhere on time. Already planning our next trip with them.</p>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-author"><strong>Stephen Kuta</strong><span>Eldoret, Kenya</span></div>
+      </div>
+
+      <div class="testi-card reveal" style="transition-delay: 0.2s;">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">The Mount Kenya hike was on my bucket list for years and Calis made sure my first attempt was a success. Our guide Kamau was patient, encouraging and knew the mountain like the back of his hand. Reached Point Lenana at dawn and cried — I am not ashamed to admit it.</p>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-author"><strong>Hesborn Wanyama</strong><span>Kakamega, Kenya</span></div>
+      </div>
+
+      <div class="testi-card reveal">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">I have used their airport transfer service three times now and it is the one thing I never have to stress about when flying into Nairobi. Always on time, the vehicles are clean and the drivers are professional and friendly. Worth every shilling.</p>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-author"><strong>Leah Noah</strong><span>Nairobi, Kenya</span></div>
+      </div>
+
+      <div class="testi-card reveal" style="transition-delay: 0.1s;">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Calis Adventures organised our company team building in Naivasha and it was the highlight of our year. The activities were exciting, the food was delicious, and our team came back to the office genuinely energised and bonded. Management was so impressed they have already approved next year's budget!</p>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-author"><strong>Happiness Nasirubi</strong><span>Mombasa, Kenya</span></div>
+      </div>
+
+      <div class="testi-card reveal" style="transition-delay: 0.2s;">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Took my parents on their first ever diving experience at the Kenyan coast through Calis and I could not have chosen better. The instructors were calm, thorough and made my mum — who was terrified of water — feel completely safe. She is already asking when we can go back. Truly blessed service.</p>
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-author"><strong>Kevin Koinonia</strong><span>Nakuru, Kenya</span></div>
+      </div>
+
+    </div>
+  </section>
+
+
+    <!-- ============================================================
+       GALLERY
+       ============================================================ -->
+  <section id="gallery">
+    <div class="gallery-header reveal">
+      <p class="section-label">Our Moments</p>
+      <h2 class="section-title">Adventures in <em>Pictures</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub">Real trips, real people, real memories — a glimpse into the Calis Adventures experience.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="images/gallery-1.jpg" alt="Hiking adventure" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.05s"><img src="images/gallery-2.jpg" alt="Group event" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.1s"><img src="images/gallery-3.jpg" alt="Team activity" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.15s"><img src="images/gallery-4.jpg" alt="Colour powder fun" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.2s"><img src="images/gallery-5.jpg" alt="Adventure vibes" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.25s"><img src="images/gallery-6.jpg" alt="Group fun" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.3s"><img src="images/gallery-7.jpg" alt="Outdoor event" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.35s"><img src="images/gallery-8.jpg" alt="Hotel garden" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.4s"><img src="images/gallery-9.jpg" alt="Hotel interior" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.45s"><img src="images/gallery-10.jpg" alt="Hotel exterior" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.5s"><img src="images/gallery-11.jpg" alt="Hotel staircase" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.55s"><img src="images/gallery-12.jpg" alt="Hotel parking" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.6s"><img src="images/gallery-13.jpg" alt="Hotel corridor" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.65s"><img src="images/gallery-14.jpg" alt="Diving photographer" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.7s"><img src="images/gallery-15.jpg" alt="Coral reef diving" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.75s"><img src="images/gallery-16.jpg" alt="Divers with fish" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.8s"><img src="images/gallery-17.jpg" alt="Bus tour campfire" loading="lazy"/></div>
+      <div class="gallery-item reveal" style="transition-delay:0.85s"><img src="images/gallery-18.jpg" alt="Car handover" loading="lazy"/></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       BOOKINGS
+       ============================================================ -->
+  <section id="bookings">
+    <div class="bookings-wrap">
+
+      <div class="reveal">
+        <p class="section-label">Ready to Explore?</p>
+        <h2 class="section-title">Book Your <em>Adventure</em></h2>
+        <div class="divider"></div>
+        <div class="booking-info">
+          <p>Fill out the form and our team will get back to you within 24 hours with a personalised itinerary and quote. Prefer to chat directly? Reach us below.</p>
+          <div class="contact-methods">
+            <a href="tel:254732633470" class="contact-method">
+              <span class="cm-icon">📞</span>
+              <div><div class="cm-label">Call Us</div><div class="cm-value">+254 732 633 470</div></div>
+            </a>
+            <a href="https://wa.me/254732633470" target="_blank" class="contact-method">
+              <span class="cm-icon"><svg viewBox="0 0 32 32" width="22" height="22" fill="#C9A84C" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.783 6.86L2 30l7.352-1.763A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.834-1.597l-.418-.248-4.364 1.047 1.074-4.253-.273-.437A11.467 11.467 0 0 1 4.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.398c-.344-.172-2.037-1.004-2.352-1.119-.316-.115-.546-.172-.776.172-.23.344-.888 1.119-1.088 1.35-.2.23-.4.258-.744.086-.344-.172-1.452-.535-2.766-1.707-1.022-.91-1.713-2.035-1.913-2.379-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.6.172-.2.229-.344.344-.574.115-.23.057-.43-.029-.602-.086-.172-.776-1.87-1.063-2.56-.28-.672-.564-.58-.776-.592l-.66-.011c-.23 0-.602.086-.917.43-.316.344-1.204 1.176-1.204 2.869s1.233 3.33 1.404 3.56c.172.23 2.427 3.705 5.878 5.195.822.355 1.463.567 1.963.726.824.263 1.574.226 2.168.137.661-.099 2.037-.832 2.324-1.635.287-.803.287-1.491.2-1.635-.086-.143-.316-.23-.66-.4z"/></svg></span>
+              <div><div class="cm-label">WhatsApp</div><div class="cm-value">Chat with us instantly</div></div>
+            </a>
+            <a href="mailto:Calisadventures405@gmail.com" class="contact-method">
+              <span class="cm-icon">✉️</span>
+              <div><div class="cm-label">Email Us</div><div class="cm-value">Calisadventures405@gmail.com</div></div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-form reveal" style="transition-delay: 0.2s;">
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:300; color:var(--gold); margin-bottom:1.75rem; letter-spacing:0.05em;">Request a Quote</h3>
+        <div id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bFirstName">First Name</label>
+              <input id="bFirstName" type="text" placeholder="John" />
+            </div>
+            <div class="form-group">
+              <label for="bLastName">Last Name</label>
+              <input id="bLastName" type="text" placeholder="Doe" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bEmail">Email Address</label>
+            <input id="bEmail" type="email" placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="bPhone">Phone / WhatsApp</label>
+            <input id="bPhone" type="tel" placeholder="+254 732 633 470" />
+          </div>
+          <div class="form-group">
+            <label for="bService">Service Interested In</label>
+            <select id="bService">
+              <option value="" disabled selected>Select a service</option>
+              <option>Bus Tours</option>
+              <option>Diving Services</option>
+              <option>Car Reservations</option>
+              <option>Airport Transfer</option>
+              <option>Hotel Reservations</option>
+              <option>Tourist Guide Services</option>
+              <option>Event Hosting</option>
+              <option>Team Building</option>
+              <option>Multiple / Custom Package</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bDate">Preferred Date</label>
+              <input id="bDate" type="date" />
+            </div>
+            <div class="form-group">
+              <label for="bGroup">Group Size</label>
+              <select id="bGroup">
+                <option>1–2 people</option>
+                <option>3–5 people</option>
+                <option>6–10 people</option>
+                <option>11–20 people</option>
+                <option>20+ people</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bMessage">Message / Special Requests</label>
+            <textarea id="bMessage" placeholder="Tell us about your dream adventure..."></textarea>
+          </div>
+          <button class="btn-submit" onclick="submitBooking()">Send Inquiry</button>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <p style="font-size:2rem; margin-bottom:1rem;">✨</p>
+          <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold); margin-bottom:0.5rem;">Thank you!</p>
+          <p style="font-size:0.85rem; color:var(--gold-light);">We've received your enquiry and will be in touch within 24 hours.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section id="contact">
+    <div class="contact-grid">
+
+      <div class="reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Let's Plan Your <em>Journey</em></h2>
+        <div class="divider"></div>
+        <p class="section-sub">We're here to help you craft the adventure of a lifetime. Reach out through any channel — we respond fast.</p>
+        <div class="contact-info-list">
+          <div class="ci-item">
+            <span class="ci-icon">📞</span>
+            <div><h4>Phone</h4><a href="tel:254732633470">+254 732 633 470</a></div>
+          </div>
+          <div class="ci-item">
+            <span class="ci-icon">✉️</span>
+            <div><h4>Email</h4><a href="mailto:Calisadventures405@gmail.com">Calisadventures405@gmail.com</a></div>
+          </div>
+          <div class="ci-item">
+            <span class="ci-icon">📍</span>
+            <div><h4>Location</h4><p>Nationwide, Kenya<br>East Africa</p></div>
+          </div>
+          <div class="ci-item">
+            <span class="ci-icon">🕐</span>
+            <div><h4>Working Hours</h4><p>Daily: 9:00am – 5:00pm EAT<br>Including public holidays</p></div>
+          </div>
+        </div>
+        <div class="social-links">
+          <!-- TODO: Replace # with your real social media URLs -->
+          <a href="#" class="social-link" title="Instagram"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" class="social-link" title="Facebook"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="social-link" title="TikTok"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg></a>
+          <a href="#" class="social-link" title="YouTube"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
+          <a href="https://wa.me/254732633470" target="_blank" class="social-link" title="WhatsApp"><svg viewBox="0 0 32 32" width="18" height="18" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.783 6.86L2 30l7.352-1.763A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.834-1.597l-.418-.248-4.364 1.047 1.074-4.253-.273-.437A11.467 11.467 0 0 1 4.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.398c-.344-.172-2.037-1.004-2.352-1.119-.316-.115-.546-.172-.776.172-.23.344-.888 1.119-1.088 1.35-.2.23-.4.258-.744.086-.344-.172-1.452-.535-2.766-1.707-1.022-.91-1.713-2.035-1.913-2.379-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.6.172-.2.229-.344.344-.574.115-.23.057-.43-.029-.602-.086-.172-.776-1.87-1.063-2.56-.28-.672-.564-.58-.776-.592l-.66-.011c-.23 0-.602.086-.917.43-.316.344-1.204 1.176-1.204 2.869s1.233 3.33 1.404 3.56c.172.23 2.427 3.705 5.878 5.195.822.355 1.463.567 1.963.726.824.263 1.574.226 2.168.137.661-.099 2.037-.832 2.324-1.635.287-.803.287-1.491.2-1.635-.086-.143-.316-.23-.66-.4z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap reveal" style="transition-delay: 0.2s;">
+        <h3 style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:300; color:var(--gold); margin-bottom:1.75rem;">Send Us a Message</h3>
+        <div id="contactForm">
+          <div class="form-group">
+            <label for="cName">Your Name</label>
+            <input id="cName" type="text" placeholder="Jane Doe" />
+          </div>
+          <div class="form-group">
+            <label for="cEmail">Email Address</label>
+            <input id="cEmail" type="email" placeholder="jane@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="cSubject">Subject</label>
+            <input id="cSubject" type="text" placeholder="Safari enquiry" />
+          </div>
+          <div class="form-group">
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" style="min-height:140px;" placeholder="How can we help you?"></textarea>
+          </div>
+          <button class="btn-submit" onclick="submitContact()">Send Message</button>
+        </div>
+        <div class="form-success" id="contactSuccess">
+          <p style="font-size:2rem; margin-bottom:1rem;">🌍</p>
+          <p style="font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--gold); margin-bottom:0.5rem;">Message Sent!</p>
+          <p style="font-size:0.85rem; color:var(--gold-light);">We'll get back to you as soon as possible.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       VIDEO SHOWCASE
+       ============================================================ -->
+  <section id="video-showcase">
+    <div class="video-showcase-inner reveal">
+      <p class="section-label">Feel the Adventure</p>
+      <h2 class="section-title">See Africa <em>Come Alive</em></h2>
+      <div class="divider"></div>
+      <p class="section-sub" style="text-align:center;max-width:560px;margin:0 auto 2.5rem;">A glimpse into the raw, breathtaking beauty that awaits you across Kenya and East Africa.</p>
+      <div class="video-wrapper">
+        <video controls muted loop playsinline class="showcase-video" poster="images/gallery-1.jpg">
+          <source src="images/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="video-play-overlay" id="videoPlayOverlay">
+          <button class="video-play-btn" id="videoPlayBtn" aria-label="Play video">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+              <polygon points="5,3 19,12 5,21"/>
+            </svg>
+          </button>
+          <span>Watch Our Story</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a class="nav-logo" href="#home" style="display:inline-flex;">
+        <img src="images/logo.png" alt="Calis Adventures Logo" style="width:38px; height:38px; object-fit:contain;" />
+          <div class="nav-logo-text" style="margin-left:10px;">
+            Calis Elite
+            <span>by Calis Adventures</span>
+          </div>
+        </a>
+        <p>Kenya's rising luxury adventure company — crafting unforgettable safaris, hikes, and tours nationwide since 2023.</p>
+        <div class="social-links">
+          <!-- TODO: Replace # with your real social media URLs -->
+
+          <!-- Instagram -->
+          <a href="#" class="social-link" title="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4.5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+
+          <!-- Facebook -->
+          <a href="#" class="social-link" title="Facebook">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+
+          <!-- TikTok -->
+          <a href="#" class="social-link" title="TikTok">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/>
+              <path d="M16.5 2.5h1.5a6.5 6.5 0 0 0 1.5 4" stroke="currentColor" stroke-width="1.2" fill="none"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="#" class="social-link" title="YouTube">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a1a1a"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp (unchanged) -->
+          <a href="https://wa.me/254732633470" target="_blank" class="social-link" title="WhatsApp">
+            <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.783 6.86L2 30l7.352-1.763A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.834-1.597l-.418-.248-4.364 1.047 1.074-4.253-.273-.437A11.467 11.467 0 0 1 4.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.398c-.344-.172-2.037-1.004-2.352-1.119-.316-.115-.546-.172-.776.172-.23.344-.888 1.119-1.088 1.35-.2.23-.4.258-.744.086-.344-.172-1.452-.535-2.766-1.707-1.022-.91-1.713-2.035-1.913-2.379-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.6.172-.2.229-.344.344-.574.115-.23.057-.43-.029-.602-.086-.172-.776-1.87-1.063-2.56-.28-.672-.564-.58-.776-.592l-.66-.011c-.23 0-.602.086-.917.43-.316.344-1.204 1.176-1.204 2.869s1.233 3.33 1.404 3.56c.172.23 2.427 3.705 5.878 5.195.822.355 1.463.567 1.963.726.824.263 1.574.226 2.168.137.661-.099 2.037-.832 2.324-1.635.287-.803.287-1.491.2-1.635-.086-.143-.316-.23-.66-.4z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Bus Tours</a></li>
+          <li><a href="#services">Diving Services</a></li>
+          <li><a href="#services">Car Reservations</a></li>
+          <li><a href="#services">Airport Transfer</a></li>
+          <li><a href="#services">Hotel Reservations</a></li>
+          <li><a href="#services">Tourist Guide Services</a></li>
+          <li><a href="#services">Event Hosting</a></li>
+          <li><a href="#services">Team Building</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:254732633470">+254 732 633 470</a></li>
+          <li><a href="mailto:Calisadventures405@gmail.com">Calisadventures405@gmail.com</a></li>
+          <li><a href="#bookings">Book Now</a></li>
+          <li><a href="https://wa.me/254732633470" target="_blank">WhatsApp Chat</a></li>
+          <li><a href="#contact">Send a Message</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Calis Adventures. All rights reserved. Nationwide, Kenya.</p>
+      <p style="color: rgba(201,168,76,0.4);">Where Luxury Meets Adventure</p>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       WHATSAPP FLOATING BUTTON
+       ============================================================ -->
+  <a href="https://wa.me/254732633470" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <div class="whatsapp-pulse"></div>
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#ffffff">
+      <path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.648 4.829 1.783 6.86L2 30l7.352-1.763A13.94 13.94 0 0 0 16 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.834-1.597l-.418-.248-4.364 1.047 1.074-4.253-.273-.437A11.467 11.467 0 0 1 4.5 16C4.5 9.596 9.596 4.5 16 4.5S27.5 9.596 27.5 16 22.404 27.5 16 27.5zm6.29-8.398c-.344-.172-2.037-1.004-2.352-1.119-.316-.115-.546-.172-.776.172-.23.344-.888 1.119-1.088 1.35-.2.23-.4.258-.744.086-.344-.172-1.452-.535-2.766-1.707-1.022-.91-1.713-2.035-1.913-2.379-.2-.344-.021-.53.15-.701.155-.155.344-.4.516-.6.172-.2.229-.344.344-.574.115-.23.057-.43-.029-.602-.086-.172-.776-1.87-1.063-2.56-.28-.672-.564-.58-.776-.592l-.66-.011c-.23 0-.602.086-.917.43-.316.344-1.204 1.176-1.204 2.869s1.233 3.33 1.404 3.56c.172.23 2.427 3.705 5.878 5.195.822.355 1.463.567 1.963.726.824.263 1.574.226 2.168.137.661-.099 2.037-.832 2.324-1.635.287-.803.287-1.491.2-1.635-.086-.143-.316-.23-.66-.4z"/>
+    </svg>
+  </a>
+
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lbClose">&times;</span>
+    <span class="lightbox-prev" id="lbPrev">&#8249;</span>
+    <img src="" alt="" id="lbImg"/>
+    <span class="lightbox-next" id="lbNext">&#8250;</span>
+  </div>
+
+  <!-- JavaScript — always load last -->
+  <script src="script.js"></script>
+
+  <!-- Calis AI Assistant Widget -->
+  <script src="calis-assistant.js"></script>
+
+
+  <!-- Hero Slideshow Script -->
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.hero-slide');
+      const dotsContainer = document.getElementById('heroDots');
+      let current = 0;
+      let timer;
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'hero-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Slide ' + (i + 1));
+        d.addEventListener('click', () => { goTo(i); resetTimer(); });
+        dotsContainer.appendChild(d);
+      });
+
+      function goTo(n) {
+        slides[current].classList.remove('active');
+        dotsContainer.children[current].classList.remove('active');
+        current = (n + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dotsContainer.children[current].classList.add('active');
+      }
+
+      function next() { goTo(current + 1); }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(next, 5000);
+      }
+
+      resetTimer();
+
+      // Video play overlay
+      const overlay = document.getElementById('videoPlayOverlay');
+      const playBtn = document.getElementById('videoPlayBtn');
+      const video = document.querySelector('.showcase-video');
+      if (playBtn && video) {
+        playBtn.addEventListener('click', () => {
+          video.muted = false;
+          video.play();
+          overlay.style.display = 'none';
+        });
+      }
+    })();
+  </script>
+
+
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    let currentIndex = 0;
+    const srcs = Array.from(galleryItems).map(img => img.src);
+
+    galleryItems.forEach((img, i) => {
+      img.parentElement.addEventListener('click', () => {
+        currentIndex = i;
+        lbImg.src = srcs[i];
+        lightbox.classList.add('active');
+      });
+    });
+
+    document.getElementById('lbClose').addEventListener('click', () => lightbox.classList.remove('active'));
+    lightbox.addEventListener('click', e => { if(e.target === lightbox) lightbox.classList.remove('active'); });
+
+    document.getElementById('lbPrev').addEventListener('click', e => {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + srcs.length) % srcs.length;
+      lbImg.src = srcs[currentIndex];
+    });
+    document.getElementById('lbNext').addEventListener('click', e => {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % srcs.length;
+      lbImg.src = srcs[currentIndex];
+    });
+
+    document.addEventListener('keydown', e => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') lightbox.classList.remove('active');
+      if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + srcs.length) % srcs.length; lbImg.src = srcs[currentIndex]; }
+      if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % srcs.length; lbImg.src = srcs[currentIndex]; }
+    });
+  </script>
+</body>
+</html>
