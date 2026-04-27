@@ -38,9 +38,9 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => revealObserver.observe(el));
 
-const EMAILJS_PUBLIC_KEY  = '6RSlzWe-yRghDkILu';
+const EMAILJS_PUBLIC_KEY  = '6RSlzWe-yRghDkLu';
 const EMAILJS_SERVICE_ID  = 'service_tvpzmoh';
-const EMAILJS_BOOKING_TID = 'template_fligb7';
+const EMAILJS_BOOKING_TID = 'template_knuj3ez';
 const EMAILJS_CONTACT_TID = 'template_fuiwukt';
 
 window.addEventListener('load', () => {
