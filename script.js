@@ -5,8 +5,12 @@
 // ─── NAV SCROLL EFFECT ───────────────────────────────────────
 const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
+window.addEventListener('load', () => {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({
+      publicKey: EMAILJS_PUBLIC_KEY,
+    });
+  }
 });
 
 // ─── MOBILE HAMBURGER MENU ───────────────────────────────────
