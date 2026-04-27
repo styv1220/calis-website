@@ -28,6 +28,16 @@ const revealObserver = new IntersectionObserver((entries) => {
 reveals.forEach(el => revealObserver.observe(el));
 
 
+// ─── MIN DATE ON BOOKING FORM ────────────────────────────────
+(function() {
+  const dateInput = document.getElementById('bDate');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+  }
+})();
+
+
 // ============================================================
 //  EMAILJS SETUP
 // ============================================================
@@ -98,8 +108,15 @@ function submitBooking() {
     .then(function() {
       form.style.display = 'none';
       success.classList.add('show');
-      btn.disabled    = false;
-      btn.textContent = 'Send Inquiry';
+      let t = 60;
+      const cd = setInterval(() => {
+        btn.textContent = `Wait (${t}s)`;
+        if (--t < 0) {
+          clearInterval(cd);
+          btn.disabled    = false;
+          btn.textContent = 'Send Inquiry';
+        }
+      }, 1000);
     })
     .catch(function(error) {
       console.error('Booking error:', JSON.stringify(error));
@@ -146,8 +163,15 @@ function submitContact() {
     .then(function() {
       form.style.display = 'none';
       success.classList.add('show');
-      btn.disabled    = false;
-      btn.textContent = 'Send Message';
+      let t = 60;
+      const cd = setInterval(() => {
+        btn.textContent = `Wait (${t}s)`;
+        if (--t < 0) {
+          clearInterval(cd);
+          btn.disabled    = false;
+          btn.textContent = 'Send Message';
+        }
+      }, 1000);
     })
     .catch(function(error) {
       console.error('Contact error:', JSON.stringify(error));
