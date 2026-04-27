@@ -69,13 +69,15 @@ function submitBooking() {
     return;
   }
 
+const bGroup = document.getElementById('bGroup');
+  const bService = document.getElementById('bService');
   const params = {
-    client_name:  (document.getElementById('bFirstName').value.trim() + ' ' + document.getElementById('bLastName').value.trim()).trim(),
+    client_name:  document.getElementById('bFirstName').value.trim() + ' ' + document.getElementById('bLastName').value.trim(),
     client_email: document.getElementById('bEmail').value.trim(),
     client_phone: document.getElementById('bPhone').value.trim() || 'Not provided',
-    service:      document.getElementById('bService').value || 'Not selected',
-    travel_date:  document.getElementById('bDate').value || 'Not specified',
-    group_size:   document.getElementById('bGroup').options[document.getElementById('bGroup').selectedIndex]?.text || 'Not specified',
+    service:      bService.options[bService.selectedIndex] ? bService.options[bService.selectedIndex].text : 'Not selected',
+    travel_date:  document.getElementById('bDate').value ? document.getElementById('bDate').value : 'Not specified',
+    group_size:   bGroup.options[bGroup.selectedIndex] ? bGroup.options[bGroup.selectedIndex].text : 'Not specified',
     message:      document.getElementById('bMessage').value.trim() || 'No message',
   };
 
