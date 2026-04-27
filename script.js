@@ -75,7 +75,7 @@ function submitBooking() {
     client_phone: document.getElementById('bPhone').value.trim() || 'Not provided',
     service:      document.getElementById('bService').value || 'Not selected',
     travel_date:  document.getElementById('bDate').value || 'Not specified',
-    group_size:   document.getElementById('bGroup').value,
+    group_size:   document.getElementById('bGroup').options[document.getElementById('bGroup').selectedIndex]?.text || 'Not specified',
     message:      document.getElementById('bMessage').value.trim() || 'No message',
   };
 
