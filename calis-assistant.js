@@ -461,8 +461,110 @@ TONE: Warm, professional, luxury-focused. Keep responses to 2-4 sentences max. N
     if (t) t.remove();
   }
 
+  /* ── Rule-Based Response Engine ── */
+  const RESPONSES = [
+    {
+      keys: ['hello', 'hi', 'hey', 'jambo', 'habari', 'good morning', 'good afternoon', 'good evening'],
+      reply: '👋 <strong>Jambo!</strong> Welcome to Calis Adventures! How can I help you today? You can ask me about our services, pricing, bookings, or destinations.'
+    },
+    {
+      keys: ['service', 'offer', 'what do you do', 'what you do', 'help'],
+      reply: '🌍 We offer a wide range of services:<br><br>🚌 Bus Tours · 🤿 Diving · 🚙 Car Hire · ✈️ Airport Transfers · 🏨 Hotel Reservations · 🧭 Tourist Guides · 🎪 Event Hosting · 🤝 Team Building · 🦁 Safari Packages · 🏔️ Hiking<br><br>Which service would you like to know more about?'
+    },
+    {
+      keys: ['safari', 'masai mara', 'mara', 'amboseli', 'tsavo', 'game drive', 'wildlife'],
+      reply: '🦁 Our safari packages cover <strong>Masai Mara, Amboseli, Tsavo</strong> and more across Kenya. Each safari is fully tailored — private game drives, luxury camps, and expert local guides included. <br><br>📞 Call us for a custom quote: <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+    },
+    {
+      keys: ['hike', 'hiking', 'mount kenya', 'mountain', 'trek', 'trekking', 'lenana'],
+      reply: '🏔️ We offer guided hikes up <strong>Mount Kenya</strong> including Point Lenana summit attempts. Our guides are experienced, safety-trained, and know the mountain inside out.<br><br>Contact us for dates and pricing: <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+    },
+    {
+      keys: ['dive', 'diving', 'snorkel', 'coral', 'reef', 'coast', 'mombasa', 'ocean', 'marine'],
+      reply: '🤿 Our diving services operate along the <strong>Kenyan coast</strong> with certified instructors. Whether you\'re a beginner or experienced diver, we\'ll take you through stunning coral reefs and marine life.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+    },
+    {
+      keys: ['bus', 'bus tour', 'coach', 'group tour', 'group travel'],
+      reply: '🚌 Our <strong>Bus Tours</strong> use modern, air-conditioned coaches perfect for groups of all sizes. We cover major destinations across East Africa.<br><br>Great for church groups, school trips, and corporate travel. <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">Chat with us on WhatsApp</a> to get a quote.'
+    },
+    {
+      keys: ['car', 'vehicle', 'hire', 'rent', '4x4', 'minibus', 'saloon', 'drive'],
+      reply: '🚙 We offer <strong>Car Reservations</strong> including 4×4 safari vehicles, minibuses, and saloons — all well-maintained and suitable for Kenya\'s diverse terrain.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+    },
+    {
+      keys: ['airport', 'transfer', 'pickup', 'jkia', 'wilson', 'drop', 'nairobi airport', 'flight'],
+      reply: '✈️ We provide seamless <strong>Airport Transfers</strong> to and from JKIA, Wilson Airport, and regional airstrips. Your driver will meet you on arrival — no stress, no waiting.<br><br>Book in advance: <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+    },
+    {
+      keys: ['hotel', 'lodge', 'camp', 'accommodation', 'stay', 'book hotel', 'tented'],
+      reply: '🏨 We curate and book <strong>hotels, lodges, and tented camps</strong> across Kenya — from budget-friendly options to ultra-luxury properties.<br><br>Tell us your destination and dates and we\'ll find the perfect fit: <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+    },
+    {
+      keys: ['guide', 'tourist guide', 'local guide', 'bilingual', 'tour guide'],
+      reply: '🧭 Our <strong>Tourist Guides</strong> are born and raised in East Africa — bilingual, passionate, and full of stories that bring every destination to life.<br><br>Available for day trips, multi-day tours, and custom itineraries.'
+    },
+    {
+      keys: ['event', 'hosting', 'gala', 'festival', 'celebration', 'corporate event', 'party'],
+      reply: '🎪 We plan and execute <strong>Events</strong> from corporate galas to outdoor festivals and private celebrations. We handle everything — venue, logistics, décor, catering coordination, and more.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+    },
+    {
+      keys: ['team building', 'team', 'corporate', 'retreat', 'company', 'staff', 'office'],
+      reply: '🤝 Our <strong>Team Building</strong> packages feature adventure-based activities, outdoor challenges, and immersive retreats designed to bond and energise your team.<br><br>Past clients include companies from Nairobi, Mombasa, and Eldoret. <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a> for a proposal.'
+    },
+    {
+      keys: ['price', 'cost', 'how much', 'rate', 'charge', 'fee', 'pricing', 'quote', 'budget'],
+      reply: '💰 Our pricing depends on the service, group size, and duration. We don\'t do one-size-fits-all — every quote is personalised.<br><br>Get your custom quote:<br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a><br>💬 <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+    },
+    {
+      keys: ['book', 'booking', 'reserve', 'reservation', 'schedule', 'appointment', 'inquiry'],
+      reply: '📋 Ready to book? You can:<br><br>1️⃣ Fill the <strong>booking form</strong> on this page (scroll to Book Now)<br>2️⃣ <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a> directly<br>3️⃣ Call <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a><br><br>We respond within 24 hours!'
+    },
+    {
+      keys: ['contact', 'reach', 'call', 'phone', 'email', 'whatsapp', 'talk', 'speak'],
+      reply: '📬 Here\'s how to reach us:<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a><br>✉️ <a href="mailto:Calisadventures545@gmail.com" style="color:#C9A84C;">Calisadventures545@gmail.com</a><br>💬 <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp</a><br><br>🕐 Daily: 9:00am – 5:00pm EAT'
+    },
+    {
+      keys: ['location', 'where', 'address', 'based', 'nairobi', 'kenya', 'office'],
+      reply: '📍 We are based in <strong>Nairobi, Kenya</strong> and operate <strong>nationwide</strong> across Kenya and East Africa. No physical walk-in office — we work fully by phone, WhatsApp, and email for your convenience.'
+    },
+    {
+      keys: ['hour', 'open', 'working hours', 'time', 'available', 'when'],
+      reply: '🕐 We are available <strong>daily from 9:00am to 5:00pm EAT</strong> — including weekends and public holidays. For urgent inquiries outside hours, WhatsApp is your best bet.'
+    },
+    {
+      keys: ['review', 'testimonial', 'rating', 'feedback', 'experience', 'client'],
+      reply: '⭐ Our clients rate us <strong>4.9/5</strong> on average. From Masai Mara safaris to Mount Kenya hikes and team building retreats — our adventurers keep coming back.<br><br>Scroll up to the Testimonials section to read their stories!'
+    },
+    {
+      keys: ['about', 'who are you', 'company', 'calis', 'history', 'founded', 'story'],
+      reply: '🌍 <strong>Calis Adventures</strong> (premium brand: <em>Calis Elite</em>) was founded in Nairobi, Kenya with one vision — to show the world the breathtaking beauty of East Africa in a personal, authentic way.<br><br>In 2 years we\'ve completed safaris, served clients across Kenya, and impacted 2,000+ lives. We\'re just getting started!'
+    },
+    {
+      keys: ['naivasha', 'nakuru', 'diani', 'watamu', 'malindi', 'samburu', 'lake'],
+      reply: '🗺️ Yes, we cover destinations across Kenya including <strong>Naivasha, Nakuru, Diani, Watamu, Malindi, Samburu</strong> and many more.<br><br>Tell us where you want to go and we\'ll craft the perfect itinerary: <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+    },
+    {
+      keys: ['thank', 'thanks', 'asante', 'appreciate', 'great', 'awesome', 'perfect'],
+      reply: '😊 You\'re most welcome! It\'s our pleasure. If you have any more questions or are ready to book, we\'re here for you.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+    },
+    {
+      keys: ['bye', 'goodbye', 'see you', 'later', 'kwaheri'],
+      reply: '👋 <strong>Kwaheri!</strong> Thank you for chatting with Calis Adventures. We look forward to making your next adventure unforgettable. Safe travels! 🌍'
+    }
+  ];
+
+  function getRuleBasedReply(text) {
+    const lower = text.toLowerCase();
+    for (const rule of RESPONSES) {
+      if (rule.keys.some(k => lower.includes(k))) {
+        return rule.reply;
+      }
+    }
+    return '🤔 I\'m not sure about that one. For detailed help, please reach us directly:<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a><br>💬 <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp</a><br>✉️ <a href="mailto:Calisadventures545@gmail.com" style="color:#C9A84C;">Calisadventures545@gmail.com</a>';
+  }
+
   /* ── Send ── */
-  async function sendMessage(text) {
+  function sendMessage(text) {
     text = (text || inputEl.value).trim();
     if (!text || isLoading) return;
 
@@ -470,39 +572,19 @@ TONE: Warm, professional, luxury-focused. Keep responses to 2-4 sentences max. N
     addBubble('user', escHtml(text));
     quickEl.style.display = 'none';
 
-    history.push({ role: 'user', content: text });
-
     isLoading = true;
     sendBtn.disabled = true;
     showTyping();
 
-    try {
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          system: KB,
-          messages: history
-        })
-      });
-
-      const data = await res.json();
+    // Simulate natural typing delay
+    setTimeout(() => {
       hideTyping();
-
-      const reply = data?.content?.[0]?.text || "I'm sorry, I couldn't get a response. Please try calling us on +254 732 633 470 or WhatsApp!";
-      history.push({ role: 'assistant', content: reply });
-      addBubble('bot', formatReply(reply));
-
-    } catch (e) {
-      hideTyping();
-      addBubble('bot', 'Sorry, something went wrong. Please reach us directly on <a href="https://wa.me/254732633470" target="_blank" style="color:#C9A84C;">WhatsApp</a> or call <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>.');
-    } finally {
+      const reply = getRuleBasedReply(text);
+      addBubble('bot', reply);
       isLoading = false;
       sendBtn.disabled = false;
       inputEl.focus();
-    }
+    }, 800);
   }
 
   /* ── Helpers ── */
