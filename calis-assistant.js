@@ -344,7 +344,7 @@ TONE: Warm, professional, luxury-focused. Keep responses to 2-4 sentences max. N
   `.trim();
 
   /* ── Quick suggestions ── */
-  const QUICK = ['Our services', 'Book a safari', 'Contact us', 'Diving trips', 'Airport transfer'];
+  const QUICK = ['Our services', 'Book a safari', 'Diving trips', 'Airport transfer', 'Get a quote'];
 
   /* ── DOM Build ── */
   // Trigger button
@@ -462,94 +462,184 @@ TONE: Warm, professional, luxury-focused. Keep responses to 2-4 sentences max. N
   }
 
   /* ── Rule-Based Response Engine ── */
+  const WA = 'https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services.';
+  const TEL = 'tel:254732633470';
+  const EMAIL = 'mailto:Calisadventures545@gmail.com';
+  const SITE = 'https://styv1220.github.io/calis-website/';
+
   const RESPONSES = [
+    // ── Greetings ──
     {
-      keys: ['hello', 'hi', 'hey', 'jambo', 'habari', 'good morning', 'good afternoon', 'good evening'],
-      reply: '👋 <strong>Jambo!</strong> Welcome to Calis Adventures! How can I help you today? You can ask me about our services, pricing, bookings, or destinations.'
+      keys: ['hello', 'hi', 'hey', 'jambo', 'habari', 'good morning', 'good afternoon', 'good evening', 'sasa', 'niaje'],
+      reply: `👋 <strong>Jambo!</strong> Welcome to Calis Adventures — where luxury meets adventure!<br><br>I can help you with our services, bookings, destinations, pricing, and more. What would you like to know?`
     },
+
+    // ── Services overview ──
     {
-      keys: ['service', 'offer', 'what do you do', 'what you do', 'help'],
-      reply: '🌍 We offer a wide range of services:<br><br>🚌 Bus Tours · 🤿 Diving · 🚙 Car Hire · ✈️ Airport Transfers · 🏨 Hotel Reservations · 🧭 Tourist Guides · 🎪 Event Hosting · 🤝 Team Building · 🦁 Safari Packages · 🏔️ Hiking<br><br>Which service would you like to know more about?'
+      keys: ['service', 'offer', 'what do you do', 'what you do', 'what can you do', 'options', 'packages'],
+      reply: `🌍 Here's everything we offer:<br><br>🚌 <strong>Bus Tours</strong> — group travel across East Africa<br>🤿 <strong>Diving</strong> — certified instructors, Kenyan coast<br>🚙 <strong>Car Hire</strong> — 4×4s, minibuses, saloons<br>✈️ <strong>Airport Transfers</strong> — JKIA, Wilson & regional<br>🏨 <strong>Hotel Reservations</strong> — lodges, camps & hotels<br>🧭 <strong>Tourist Guides</strong> — bilingual local experts<br>🎪 <strong>Event Hosting</strong> — corporate & private events<br>🤝 <strong>Team Building</strong> — outdoor adventure retreats<br>🦁 <strong>Safaris</strong> — Masai Mara, Amboseli, Tsavo & more<br><br>Which one interests you?`
     },
+
+    // ── Safari ──
     {
-      keys: ['safari', 'masai mara', 'mara', 'amboseli', 'tsavo', 'game drive', 'wildlife'],
-      reply: '🦁 Our safari packages cover <strong>Masai Mara, Amboseli, Tsavo</strong> and more across Kenya. Each safari is fully tailored — private game drives, luxury camps, and expert local guides included. <br><br>📞 Call us for a custom quote: <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+      keys: ['safari', 'masai mara', 'mara', 'amboseli', 'tsavo', 'game drive', 'wildlife', 'animal', 'big five', 'lion', 'elephant', 'leopard'],
+      reply: `🦁 Our <strong>Safari Packages</strong> cover Kenya's finest parks:<br><br>• <strong>Masai Mara</strong> — Big Five, wildebeest migration<br>• <strong>Amboseli</strong> — elephants with Kilimanjaro views<br>• <strong>Tsavo East & West</strong> — vast wilderness, red elephants<br>• <strong>Nakuru</strong> — flamingos, rhinos, giraffes<br>• <strong>Samburu</strong> — rare northern species<br><br>Every safari is fully tailored — private game drives, luxury camps, expert guides.<br><br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
     },
+
+    // ── Diving ──
     {
-      keys: ['hike', 'hiking', 'mount kenya', 'mountain', 'trek', 'trekking', 'lenana'],
-      reply: '🏔️ We offer guided hikes up <strong>Mount Kenya</strong> including Point Lenana summit attempts. Our guides are experienced, safety-trained, and know the mountain inside out.<br><br>Contact us for dates and pricing: <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+      keys: ['dive', 'diving', 'snorkel', 'snorkelling', 'coral', 'reef', 'marine', 'underwater', 'scuba', 'ocean', 'sea', 'fish'],
+      reply: `🤿 Our <strong>Diving Services</strong> operate along the stunning Kenyan coast:<br><br>• Certified dive instructors for all levels<br>• Beginner lessons & advanced dives<br>• Vibrant coral reefs & marine life<br>• Full equipment provided<br><br>Popular spots: <strong>Diani, Watamu, Malindi, Shimoni</strong><br><br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a>`
     },
+
+    // ── Bus Tours ──
     {
-      keys: ['dive', 'diving', 'snorkel', 'coral', 'reef', 'coast', 'mombasa', 'ocean', 'marine'],
-      reply: '🤿 Our diving services operate along the <strong>Kenyan coast</strong> with certified instructors. Whether you\'re a beginner or experienced diver, we\'ll take you through stunning coral reefs and marine life.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+      keys: ['bus', 'bus tour', 'coach', 'group tour', 'group travel', 'church', 'school trip', 'matatu'],
+      reply: `🚌 Our <strong>Bus Tours</strong> are perfect for groups of any size:<br><br>• Modern air-conditioned coaches<br>• Church groups, school trips, corporate travel<br>• Nationwide coverage across East Africa<br>• Professional drivers included<br><br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a> for a group quote · 📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a>`
     },
+
+    // ── Car Hire ──
     {
-      keys: ['bus', 'bus tour', 'coach', 'group tour', 'group travel'],
-      reply: '🚌 Our <strong>Bus Tours</strong> use modern, air-conditioned coaches perfect for groups of all sizes. We cover major destinations across East Africa.<br><br>Great for church groups, school trips, and corporate travel. <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">Chat with us on WhatsApp</a> to get a quote.'
+      keys: ['car', 'vehicle', 'hire', 'rent', '4x4', 'minibus', 'saloon', 'drive', 'self drive', 'chauffeur'],
+      reply: `🚙 Our <strong>Car Reservations</strong> include:<br><br>• 4×4 safari vehicles for off-road<br>• Minibuses for group travel<br>• Saloons for city transfers<br>• All vehicles well-maintained & insured<br>• Driver-guided or self-drive options<br><br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
     },
+
+    // ── Airport Transfer ──
     {
-      keys: ['car', 'vehicle', 'hire', 'rent', '4x4', 'minibus', 'saloon', 'drive'],
-      reply: '🚙 We offer <strong>Car Reservations</strong> including 4×4 safari vehicles, minibuses, and saloons — all well-maintained and suitable for Kenya\'s diverse terrain.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+      keys: ['airport', 'transfer', 'pickup', 'pick up', 'jkia', 'wilson', 'drop', 'drop off', 'nairobi airport', 'flight', 'arrive', 'arrival', 'departure', 'land'],
+      reply: `✈️ Our <strong>Airport Transfer</strong> service covers:<br><br>• <strong>JKIA</strong> (Jomo Kenyatta International)<br>• <strong>Wilson Airport</strong><br>• Regional airstrips across Kenya<br>• Meet & greet on arrival<br>• Clean, punctual, professional drivers<br><br>Book in advance to guarantee your slot:<br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
     },
+
+    // ── Hotel / Accommodation ──
     {
-      keys: ['airport', 'transfer', 'pickup', 'jkia', 'wilson', 'drop', 'nairobi airport', 'flight'],
-      reply: '✈️ We provide seamless <strong>Airport Transfers</strong> to and from JKIA, Wilson Airport, and regional airstrips. Your driver will meet you on arrival — no stress, no waiting.<br><br>Book in advance: <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+      keys: ['hotel', 'lodge', 'camp', 'accommodation', 'stay', 'book hotel', 'tented', 'airbnb', 'where to stay', 'night', 'room'],
+      reply: `🏨 We curate and book the finest stays across Kenya:<br><br>• Luxury tented camps in the wild<br>• Premium lodges near national parks<br>• Boutique hotels in Nairobi & coast<br>• Budget-friendly options available<br><br>Tell us your destination, dates & budget and we'll find the perfect fit:<br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
     },
+
+    // ── Tourist Guide ──
     {
-      keys: ['hotel', 'lodge', 'camp', 'accommodation', 'stay', 'book hotel', 'tented'],
-      reply: '🏨 We curate and book <strong>hotels, lodges, and tented camps</strong> across Kenya — from budget-friendly options to ultra-luxury properties.<br><br>Tell us your destination and dates and we\'ll find the perfect fit: <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+      keys: ['guide', 'tourist guide', 'local guide', 'bilingual', 'tour guide', 'interpreter', 'accompany'],
+      reply: `🧭 Our <strong>Tourist Guides</strong> are the best in the business:<br><br>• Born & raised in East Africa<br>• Bilingual — English & Swahili<br>• Deep knowledge of wildlife, culture & history<br>• Available for day trips & multi-day tours<br>• Safety trained & fully vetted<br><br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
     },
+
+    // ── Events ──
     {
-      keys: ['guide', 'tourist guide', 'local guide', 'bilingual', 'tour guide'],
-      reply: '🧭 Our <strong>Tourist Guides</strong> are born and raised in East Africa — bilingual, passionate, and full of stories that bring every destination to life.<br><br>Available for day trips, multi-day tours, and custom itineraries.'
+      keys: ['event', 'hosting', 'gala', 'festival', 'celebration', 'corporate event', 'party', 'wedding', 'conference', 'meetup', 'graduation'],
+      reply: `🎪 Our <strong>Event Hosting</strong> service covers everything:<br><br>• Corporate galas & conferences<br>• Outdoor festivals & concerts<br>• Private celebrations & weddings<br>• Venue sourcing, logistics & décor<br>• Catering coordination<br>• End-to-end management<br><br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a> for a proposal`
     },
+
+    // ── Team Building ──
     {
-      keys: ['event', 'hosting', 'gala', 'festival', 'celebration', 'corporate event', 'party'],
-      reply: '🎪 We plan and execute <strong>Events</strong> from corporate galas to outdoor festivals and private celebrations. We handle everything — venue, logistics, décor, catering coordination, and more.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+      keys: ['team building', 'team', 'corporate', 'retreat', 'company', 'staff', 'office', 'hr', 'bonding', 'employees'],
+      reply: `🤝 Our <strong>Team Building</strong> packages are designed to energise and bond your team:<br><br>• Adventure-based outdoor activities<br>• Collaborative challenges & games<br>• Nature retreats — Naivasha, Elementaita & more<br>• Customised for your team size & goals<br>• Full catering & transport options<br><br>Past clients from Nairobi, Mombasa & Eldoret.<br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a> · 📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a>`
     },
+
+    // ── Pricing ──
     {
-      keys: ['team building', 'team', 'corporate', 'retreat', 'company', 'staff', 'office'],
-      reply: '🤝 Our <strong>Team Building</strong> packages feature adventure-based activities, outdoor challenges, and immersive retreats designed to bond and energise your team.<br><br>Past clients include companies from Nairobi, Mombasa, and Eldoret. <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a> for a proposal.'
+      keys: ['price', 'cost', 'how much', 'rate', 'charge', 'fee', 'pricing', 'quote', 'budget', 'afford', 'cheap', 'expensive', 'ksh', 'kes', 'shilling'],
+      reply: `💰 Our pricing is fully <strong>custom</strong> based on:<br><br>• Service type<br>• Group size<br>• Duration & destination<br>• Season & availability<br><br>We don't do fixed packages — every quote is tailored to you. Get yours now:<br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a><br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a><br>✉️ <a href="${EMAIL}" style="color:#C9A84C;">Calisadventures545@gmail.com</a>`
     },
+
+    // ── Booking ──
     {
-      keys: ['price', 'cost', 'how much', 'rate', 'charge', 'fee', 'pricing', 'quote', 'budget'],
-      reply: '💰 Our pricing depends on the service, group size, and duration. We don\'t do one-size-fits-all — every quote is personalised.<br><br>Get your custom quote:<br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a><br>💬 <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+      keys: ['book', 'booking', 'reserve', 'reservation', 'schedule', 'appointment', 'inquiry', 'enquiry', 'interested', 'how do i'],
+      reply: `📋 Booking with us is simple — 3 ways:<br><br>1️⃣ 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a> — fastest response<br>2️⃣ 📞 <a href="${TEL}" style="color:#C9A84C;">Call +254 732 633 470</a><br>3️⃣ ✉️ <a href="${EMAIL}" style="color:#C9A84C;">Email us</a><br><br>We respond within <strong>24 hours</strong> with a personalised itinerary & quote.`
     },
+
+    // ── Contact ──
     {
-      keys: ['book', 'booking', 'reserve', 'reservation', 'schedule', 'appointment', 'inquiry'],
-      reply: '📋 Ready to book? You can:<br><br>1️⃣ Fill the <strong>booking form</strong> on this page (scroll to Book Now)<br>2️⃣ <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a> directly<br>3️⃣ Call <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a><br><br>We respond within 24 hours!'
+      keys: ['contact', 'reach', 'call', 'phone', 'email', 'whatsapp', 'talk', 'speak', 'message', 'get in touch'],
+      reply: `📬 <strong>Contact Calis Adventures:</strong><br><br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a><br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a><br>✉️ <a href="${EMAIL}" style="color:#C9A84C;">Calisadventures545@gmail.com</a><br>🌐 <a href="${SITE}" target="_blank" style="color:#C9A84C;">Visit our website</a><br><br>🕐 Daily: 9:00am – 5:00pm EAT`
     },
+
+    // ── Working Hours ──
     {
-      keys: ['contact', 'reach', 'call', 'phone', 'email', 'whatsapp', 'talk', 'speak'],
-      reply: '📬 Here\'s how to reach us:<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a><br>✉️ <a href="mailto:Calisadventures545@gmail.com" style="color:#C9A84C;">Calisadventures545@gmail.com</a><br>💬 <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp</a><br><br>🕐 Daily: 9:00am – 5:00pm EAT'
+      keys: ['hour', 'open', 'working hours', 'time', 'available', 'when', 'office hours', 'closed', 'weekend', 'holiday'],
+      reply: `🕐 We are open <strong>every day</strong> including weekends and public holidays:<br><br>⏰ <strong>9:00am – 5:00pm EAT</strong><br><br>For urgent inquiries outside office hours, <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a> is your best option — we monitor it regularly.`
     },
+
+    // ── Location ──
     {
-      keys: ['location', 'where', 'address', 'based', 'nairobi', 'kenya', 'office'],
-      reply: '📍 We are based in <strong>Nairobi, Kenya</strong> and operate <strong>nationwide</strong> across Kenya and East Africa. No physical walk-in office — we work fully by phone, WhatsApp, and email for your convenience.'
+      keys: ['location', 'where', 'address', 'based', 'nairobi', 'office', 'find you', 'physical'],
+      reply: `📍 We are based in <strong>Nairobi, Kenya</strong> and operate nationwide across Kenya and East Africa.<br><br>We don't have a walk-in office — all bookings are handled via phone, WhatsApp, and email for your convenience.<br><br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a> · 📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a>`
     },
+
+    // ── Destinations ──
     {
-      keys: ['hour', 'open', 'working hours', 'time', 'available', 'when'],
-      reply: '🕐 We are available <strong>daily from 9:00am to 5:00pm EAT</strong> — including weekends and public holidays. For urgent inquiries outside hours, WhatsApp is your best bet.'
+      keys: ['destination', 'naivasha', 'nakuru', 'diani', 'watamu', 'malindi', 'samburu', 'lake', 'mombasa', 'kisumu', 'eldoret', 'coast', 'rift valley', 'where do you go', 'where can i go'],
+      reply: `🗺️ We cover destinations all across Kenya:<br><br>🦁 <strong>Wildlife:</strong> Masai Mara, Amboseli, Tsavo, Samburu, Nakuru<br>🌊 <strong>Coast:</strong> Diani, Watamu, Malindi, Mombasa, Shimoni<br>💧 <strong>Lakes:</strong> Naivasha, Nakuru, Elementaita, Baringo<br>🏙️ <strong>Cities:</strong> Nairobi, Mombasa, Kisumu, Eldoret<br><br>Tell us where you want to go:<br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a>`
     },
+
+    // ── About ──
     {
-      keys: ['review', 'testimonial', 'rating', 'feedback', 'experience', 'client'],
-      reply: '⭐ Our clients rate us <strong>4.9/5</strong> on average. From Masai Mara safaris to Mount Kenya hikes and team building retreats — our adventurers keep coming back.<br><br>Scroll up to the Testimonials section to read their stories!'
+      keys: ['about', 'who are you', 'who is calis', 'company', 'history', 'founded', 'story', 'background', 'calis elite', 'calis adventures'],
+      reply: `🌍 <strong>Calis Adventures</strong> — premium brand: <em>Calis Elite</em><br><br>Founded in <strong>Nairobi, Kenya</strong> with one vision: to show the world the breathtaking beauty of East Africa in a personal, authentic way.<br><br>📊 In just 2 years:<br>• 2 safaris completed<br>• 4 clients served<br>• 7 destinations visited<br>• 2,000+ lives impacted<br><br>🌐 <a href="${SITE}" target="_blank" style="color:#C9A84C;">Visit our full website</a>`
     },
+
+    // ── Reviews / Testimonials ──
     {
-      keys: ['about', 'who are you', 'company', 'calis', 'history', 'founded', 'story'],
-      reply: '🌍 <strong>Calis Adventures</strong> (premium brand: <em>Calis Elite</em>) was founded in Nairobi, Kenya with one vision — to show the world the breathtaking beauty of East Africa in a personal, authentic way.<br><br>In 2 years we\'ve completed safaris, served clients across Kenya, and impacted 2,000+ lives. We\'re just getting started!'
+      keys: ['review', 'testimonial', 'rating', 'feedback', 'experience', 'client', 'trust', 'legit', 'reliable', 'reputation'],
+      reply: `⭐ Our clients rate us <strong>4.9 / 5</strong> on average.<br><br>Here's what they say:<br><br>💬 <em>"Every moment felt curated just for us"</em> — Collins, Kisumu<br>💬 <em>"Arrived everywhere on time, guides were brilliant"</em> — Stephen, Eldoret<br>💬 <em>"My mum — terrified of water — loved the diving"</em> — Kevin, Nakuru<br><br>🌐 <a href="${SITE}#testimonials" target="_blank" style="color:#C9A84C;">Read all reviews on our website</a>`
     },
+
+    // ── Safety ──
     {
-      keys: ['naivasha', 'nakuru', 'diani', 'watamu', 'malindi', 'samburu', 'lake'],
-      reply: '🗺️ Yes, we cover destinations across Kenya including <strong>Naivasha, Nakuru, Diani, Watamu, Malindi, Samburu</strong> and many more.<br><br>Tell us where you want to go and we\'ll craft the perfect itinerary: <a href="https://wa.me/254732633470?text=Hi%20Calis%20Adventures%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" style="color:#C9A84C;">WhatsApp us</a>'
+      keys: ['safe', 'safety', 'secure', 'risk', 'danger', 'first aid', 'insured', 'trust', 'reliable', 'certified'],
+      reply: `🛡️ Your safety is our top priority at Calis Adventures:<br><br>• All guides are <strong>first aid trained</strong><br>• Vehicles are regularly inspected & insured<br>• Routes are planned with safety protocols<br>• Dive instructors are fully <strong>certified</strong><br>• 24/7 support during your trip<br><br>Any concerns? 📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a>`
     },
+
+    // ── Group size ──
     {
-      keys: ['thank', 'thanks', 'asante', 'appreciate', 'great', 'awesome', 'perfect'],
-      reply: '😊 You\'re most welcome! It\'s our pleasure. If you have any more questions or are ready to book, we\'re here for you.<br><br>📞 <a href="tel:254732633470" style="color:#C9A84C;">+254 732 633 470</a>'
+      keys: ['group', 'group size', 'how many', 'people', 'family', 'solo', 'couple', 'friends', 'large group', 'small group'],
+      reply: `👥 We cater for all group sizes:<br><br>• Solo travellers<br>• Couples & families<br>• Small groups (3–10)<br>• Large groups (11–50+)<br>• Corporate teams of any size<br><br>Pricing adjusts based on group size — larger groups get better rates.<br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a> with your group size for a quote.`
     },
+
+    // ── Payment ──
     {
-      keys: ['bye', 'goodbye', 'see you', 'later', 'kwaheri'],
-      reply: '👋 <strong>Kwaheri!</strong> Thank you for chatting with Calis Adventures. We look forward to making your next adventure unforgettable. Safe travels! 🌍'
+      keys: ['pay', 'payment', 'mpesa', 'cash', 'bank', 'deposit', 'transfer', 'invoice', 'receipt', 'how to pay'],
+      reply: `💳 <strong>Payment options:</strong><br><br>• M-Pesa (most popular)<br>• Bank transfer<br>• Cash on agreement<br><br>A deposit is typically required to confirm your booking. Full payment details are shared when you book.<br><br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
+    },
+
+    // ── Cancellation / Refund ──
+    {
+      keys: ['cancel', 'cancellation', 'refund', 'reschedule', 'change date', 'postpone'],
+      reply: `🔄 <strong>Cancellation & Rescheduling:</strong><br><br>We understand plans can change. Our policy:<br>• Rescheduling is possible with advance notice<br>• Cancellation terms depend on how close to the travel date<br>• We handle every case with flexibility & fairness<br><br>Contact us directly to discuss:<br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
+    },
+
+    // ── What to bring / pack ──
+    {
+      keys: ['bring', 'pack', 'packing', 'what to wear', 'clothes', 'prepare', 'preparation', 'checklist', 'luggage', 'bag'],
+      reply: `🎒 <strong>What to bring on your trip:</strong><br><br>🦁 <strong>Safari:</strong> Neutral-coloured clothes, sunscreen, hat, binoculars, camera, insect repellent<br>🤿 <strong>Diving:</strong> Swimwear, towel, sunscreen, water shoes (equipment provided)<br>🚌 <strong>Bus Tours:</strong> Comfortable clothes, snacks, camera, valid ID<br>✈️ <strong>Airport Transfer:</strong> Just your luggage — we handle the rest<br><br>Questions? 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a>`
+    },
+
+    // ── Best time to visit ──
+    {
+      keys: ['best time', 'season', 'when to go', 'weather', 'rainy', 'dry season', 'migration', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
+      reply: `📅 <strong>Best times to visit Kenya:</strong><br><br>🌞 <strong>Jul – Oct</strong> — Best for wildlife, wildebeest migration in Mara<br>🌞 <strong>Jan – Feb</strong> — Excellent game viewing, fewer crowds<br>🌊 <strong>Oct – Mar</strong> — Best for diving & coast visits<br>🌧️ <strong>Apr – Jun</strong> — Long rains, lush landscapes, lower prices<br><br>We operate <strong>year-round</strong> — every season has something special.<br>💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">Ask us what's best for your dates</a>`
+    },
+
+    // ── Visa / Documents ──
+    {
+      keys: ['visa', 'passport', 'document', 'id', 'permit', 'entry', 'foreigner', 'tourist visa', 'eta'],
+      reply: `🛂 <strong>Visiting Kenya:</strong><br><br>• Most nationalities need a visa — apply via the <a href="https://evisa.go.ke" target="_blank" style="color:#C9A84C;">Kenya eVisa portal</a><br>• ETA (Electronic Travel Authorisation) introduced in 2023<br>• Valid passport required (6+ months remaining)<br>• Yellow fever certificate required from some countries<br><br>For latest entry requirements: <a href="https://www.immigration.go.ke" target="_blank" style="color:#C9A84C;">Kenya Immigration</a><br><br>We can help advise — 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp us</a>`
+    },
+
+    // ── Currency / Money ──
+    {
+      keys: ['currency', 'money', 'forex', 'exchange', 'dollar', 'euro', 'pound', 'ksh', 'shilling', 'atm', 'cash'],
+      reply: `💵 <strong>Currency in Kenya:</strong><br><br>• Official currency: <strong>Kenyan Shilling (KES/KSh)</strong><br>• USD, EUR & GBP widely accepted at hotels & parks<br>• ATMs widely available in cities<br>• M-Pesa is the dominant mobile payment<br>• Forex bureaus in Nairobi city centre & airports<br><br>Check live rates: <a href="https://www.xe.com/currencyconverter/convert/?Amount=1&From=USD&To=KES" target="_blank" style="color:#C9A84C;">XE Currency Converter</a>`
+    },
+
+    // ── Thankyou ──
+    {
+      keys: ['thank', 'thanks', 'asante', 'appreciate', 'great', 'awesome', 'perfect', 'wonderful', 'excellent', 'good job'],
+      reply: `😊 You're most welcome! It's our pleasure.<br><br>Whenever you're ready to book or have more questions, we're here:<br>📞 <a href="${TEL}" style="color:#C9A84C;">+254 732 633 470</a> · 💬 <a href="${WA}" target="_blank" style="color:#C9A84C;">WhatsApp</a>`
+    },
+
+    // ── Goodbye ──
+    {
+      keys: ['bye', 'goodbye', 'see you', 'later', 'kwaheri', 'ciao', 'take care'],
+      reply: `👋 <strong>Kwaheri!</strong> Thank you for chatting with Calis Adventures.<br><br>We look forward to making your next adventure truly unforgettable. Safe travels! 🌍<br><br>🌐 <a href="${SITE}" target="_blank" style="color:#C9A84C;">Visit our website anytime</a>`
     }
   ];
 
